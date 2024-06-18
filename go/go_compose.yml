@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  nginx:
+    build: 
+      context: .
+    container_name: go-app
+    logging:
+      options:
+        max-size: "30m"
+        max-file: "10"
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
